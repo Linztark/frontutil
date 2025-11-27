@@ -30,7 +30,10 @@
 }
 
 .remove-post .btn-danger {
-  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+  background: linear-gradient(180deg, #c79ca5, #ecccd7);
+  border: 1px solid rgba(220, 90, 120, 0.14);
+  color: #8b213a;
+  box-shadow: 0 6px 18px rgba(220, 90, 120, 0.06);
 }
 
 @media (max-width: 768px) {

@@ -24,7 +24,7 @@
               [class.is-valid]="titulo?.valid && titulo?.touched"
               id="titulo"
               formControlName="titulo"
-              placeholder="Introduce el título del post"
+              placeholder="Introduce el título de la publicación"
             />
             @if (titulo?.invalid && titulo?.touched) {
             <div class="invalid-feedback">
@@ -65,9 +65,9 @@
             }
           </div>
 
-          <!-- Url de imagen -->
+          <!-- Url de imagen (ahora obligatoria) -->
           <div class="mb-4">
-            <label for="urlImagen" class="form-label">Url de imagen</label>
+            <label for="urlImagen" class="form-label">Url de imagen <span class="text-danger">*</span></label>
             <input
               type="text"
               class="form-control"
@@ -75,16 +75,19 @@
               [class.is-valid]="urlImagen?.valid && urlImagen?.touched"
               id="urlImagen"
               formControlName="urlImagen"
-              placeholder="Introduce la URL de la imagen"
+              placeholder="Introduce la URL de la imagen (obligatoria)"
             />
             @if (urlImagen?.invalid && urlImagen?.touched) {
             <div class="invalid-feedback">
+              @if (urlImagen?.errors?.['required']) {
+                <span>La URL de la imagen es obligatoria.</span>
+              }
               @if (urlImagen?.errors?.['maxlength']) {
                 <span>La URL de la imagen no puede superar 200 caracteres.</span>
               }
             </div>
             }
-            <small class="form-text text-muted">Si no sabes que poner busca en pixabay.com</small>
+            <small class="form-text text-muted">Obligatoria. Si no sabes qué poner, busca en pixabay.com</small>
           </div>
 
           <!-- Botones -->

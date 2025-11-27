@@ -32,7 +32,7 @@ export class RoutedAdminNew implements OnInit {
     });
   }
 
-  // 🔥 FORMATO QUE TU BACKEND SI ACEPTA:
+  // Formato que acepta el back
   private toLocalDateTime(): string {
     const d = new Date();
     const pad = (n: number) => n.toString().padStart(2, '0');
@@ -60,7 +60,7 @@ export class RoutedAdminNew implements OnInit {
       descripcion: this.silvestreForm.value.descripcion!,
       urlImagen: this.silvestreForm.value.urlImagen!,
       publicado: false,
-      fechaCreacion: this.toLocalDateTime(), // ← FORMATO CORRECTO
+      fechaCreacion: this.toLocalDateTime(), 
       fechaModificacion: null,
     };
 
